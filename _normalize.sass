@@ -1,11 +1,15 @@
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
 
-// supported browsers list
-$browser-support: ( ie: 9, firefox: 28, chrome: 31, safari: 6, opera: 20 ) !default
+$browser-support: ( (ie, 9), (firefox, 28), (chrome, 31), (safari, 6), (opera, 20) ) !default
 
 // get browser support function
 @function get-browser-support($browser-name, $browser-version)
-	@each $supported-browser-name, $supported-browser-version in $browser-support
+	@for $i from 1 through length($browser-support)
+		// browser name
+		$supported-browser-name: nth( nth($browser-support, $i), 1 )
+
+		// browser version
+		$supported-browser-version: nth( nth($browser-support, $i), 2 )
 
 		@if ($supported-browser-name == $browser-name and $supported-browser-version <= $browser-version)
 			@return true
