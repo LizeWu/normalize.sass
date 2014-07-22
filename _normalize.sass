@@ -5,6 +5,7 @@ $browser-support: ( (ie, 9), (firefox, 28), (chrome, 31), (safari, 6), (opera, 2
 // get browser support function
 @function get-browser-support($browser-name, $browser-version)
 
+	// if browser name not found, throw an error
 	@if not validate-browser($browser-name)
 		@warn '`#{$browser-name}` not found in supported browsers list.'
 		@return false
