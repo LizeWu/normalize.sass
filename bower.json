@@ -1,6 +1,6 @@
 {
   "name": "normalize.sass",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "main": "_normalize.sass",
   "author": "Levente Kiraly",
   "homepage": "https://github.com/leventekk/normalize.sass",
